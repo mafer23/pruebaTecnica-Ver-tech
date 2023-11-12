@@ -1,0 +1,22 @@
+#set up properties
+PROJECT_ID: consultasbigquery
+
+server:
+    port: ${DEFAULT_PORT:80}
+
+spring:
+    application:
+        name: app-bigquery
+    cloud:
+        config:
+            namespace: default
+            enabled: true
+            name: Cloud
+            profile: dev, cloud, bigquery
+            label: master
+        gcp:
+            project-id: ${PROJECT_ID:consultasbigquery}
+            credentials:
+                location: classpath:consultasbigquery-40f42a847fca.json
+            bigquery:
+                datasetName: ${DATASET_NAME:bigquery-public-data}
