@@ -11,7 +11,7 @@ const routes: Routes = [
 
    children:[
     {
-      path: 'con',
+      path: '',
       component: ConsultasComponent
       
     },
@@ -19,11 +19,11 @@ const routes: Routes = [
       path: 'graficas',
       component: GraficasComponent 
     },
-    // {
-    //   path: '',
-    //   redirectTo: '',
-    //   pathMatch: 'full'
-    // },
+    {
+      path: '',
+      redirectTo: '',
+      pathMatch: 'full'
+    },
 
    ]
 
