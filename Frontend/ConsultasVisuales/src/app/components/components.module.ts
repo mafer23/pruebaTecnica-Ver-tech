@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { GraficasComponent } from './graficas/graficas.component';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ComponentRoutingModule } from './component.routing';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +15,9 @@ import { ComponentRoutingModule } from './component.routing';
   ],
   imports: [
     CommonModule,
-    ComponentRoutingModule
+    ComponentRoutingModule,
+    NgApexchartsModule,
+    HttpClientModule
   ]
 })
 export class ComponentsModule { }
