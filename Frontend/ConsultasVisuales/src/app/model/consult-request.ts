@@ -1,4 +1,5 @@
-export interface CountyNatalityResponse {
+export interface ConsultRequest {
+
     year: string;
     county_of_Residence: string;
     county_of_Residence_FIPS: string;
@@ -9,4 +10,7 @@ export interface CountyNatalityResponse {
     ave_Birth_Weight_gms: string;
     ave_Pre_pregnancy_BMI: string;
     ave_Number_of_Prenatal_Wks: string;
-}
+    abnormalConditionsCheckedDesc: string;
+    abnormalConditionsCheckedYN: string;
+  
+  }

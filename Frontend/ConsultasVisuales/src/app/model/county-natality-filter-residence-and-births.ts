@@ -1,4 +1,4 @@
 export interface CountyNatalityFilterResidenceAndBirths {
-     County_of_Residence: string;
-     Births : string;
+     county_of_Residence: string;
+     births : string;
 }
