@@ -13,27 +13,16 @@
     </div>
  
 
-    
+ </div>   
 
-<div class=" flex flex-row justify-center bg-white border border-gray-200   absolute mt-44 w-1/2 h-32   rounded-lg pt-8">
-   
-   <div class=" flex flex-row">
 
-    <input type="text" id="small-input" class=" ml-2 w-72 h-10 block  p-2 text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-xs ">
-
-   </div> 
-    <div class="">
-
-        <button type="button" class="focus:outline-none font-bold text-gray-700 bg-[#d8b4fe] hover:bg-[#d8b4fe] focus:ring-4 focus:bg-[#d8b4fe]  rounded-lg text-sm px-5 w-40 h-10 ">Enviar</button>
-    </div>
-    
-
-</div>
-
-<div class=" w-11/12 h-60  mt-20 flex justify-center items-center relative overflow-x-auto sm:rounded-lg">
-    <table class="w-full  text-sm text-left rtl:text-right text-gray-700">
+<div class=" w-full h-72  mt-20 flex justify-center items-center relative overflow-x-auto sm:rounded-lg">
+    <table class="w-11/12 h-60  rounded-lg text-sm text-left rtl:text-right text-gray-700">
         <thead class="text-xs text-gray-700 uppercase bg-[#c084fc] rounded-lg ">
             <tr>
+                <th scope="col" class="px-6 py-3">
+                    Id
+                </th>
                 <th scope="col" class="px-6 py-3">
                     Product name
                 </th>
@@ -43,43 +32,67 @@
                 <th scope="col" class="px-6 py-3">
                     Category
                 </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
                
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-[#c4b5fd] border-b border-[#c4b5fd]">
+            <tr class="bg-[#d8b4fe] border-b border-[#d8b4fe] ">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap ">
-                    Apple MacBook Pro 17"
+                    ID
                 </th>
+                <td class="px-6 py-4">
+                    Silver
+                </td>
                 <td class="px-6 py-4">
                     Silver
                 </td>
                 <td class="px-6 py-4">
                     Laptop
                 </td>
+                <td class="px-6 py-4">
+                    <button type="button" class="text-white bg-[#a855f7] focus:outline-none focus:ring-4  font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 ">Graficas</button>
+
+                </td>
                 
             </tr>
-            <tr class="bg-[#c084fc] border-b border-[#c084fc]">
+            <tr class="bg-[#d8b4fe]  border-b border-[#d8b4fe] ">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap ">
-                    Microsoft Surface Pro
+                    Id
                 </th>
+                <td class="px-6 py-4">
+                    White
+                </td>
                 <td class="px-6 py-4">
                     White
                 </td>
                 <td class="px-6 py-4">
                     Laptop PC
                 </td>
+                <td class="px-6 py-4">
+                    <button type="button" class="text-white bg-[#a855f7] focus:outline-none focus:ring-4  font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 ">Graficas</button>
+
+                </td>
                 
             </tr>
-            <tr class="bg-[#c4b5fd] border-b border-[#c4b5fd]">
+            <tr class="bg-[#d8b4fe] border-b border-[#d8b4fe] ">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap ">
-                    Magic Mouse 2
+                    Id
                 </th>
                 <td class="px-6 py-4">
                     Black
                 </td>
                 <td class="px-6 py-4">
+                    Black
+                </td>
+                <td class="px-6 py-4">
                     Accessories
+                </td>
+                <td class="px-6 py-4">
+                    <button type="button" class="text-white bg-[#a855f7] focus:outline-none focus:ring-4  font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 ">Graficas</button>
+
                 </td>
               
             </tr>
@@ -90,8 +103,31 @@
 </div>
 
 
+<div class="   w-full h-screen  flex justify-center">
+
+    <div class="w-full h-3/5  mt-16 max-w-md bg-white border border-gray-200 rounded-lg shadow drop-shadow-lg ">
+      <div class="flex items-center justify-center h-auto">
+        <form  class="mt-10 w-3/4  ">
+          <div class="bg-white  text-gray-900 text-sm rounded-lg  block p-2.5">
+            <!-- Agrega campos para el nombre de usuario, nombre de consulta y comentario -->
+            <input type="text" formControlName="nameUser" placeholder="Nombre de Usuario" class="w-full mb-2.5 p-2 border rounded-lg" />
+            <input type="text" formControlName="nameConsult" placeholder="Nombre de Consulta" class="w-full mb-2.5 p-2 border rounded-lg" />
+            <textarea formControlName="comment" placeholder="Comentario" class="w-full mb-2.5 p-2 border rounded-lg"></textarea>
+          </div>
+          <div class="flex flex-row mt-4 space-x-1">
+            <button type="submit" class="focus:outline-none font-bold text-white bg-[#a855f7] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d] rounded-lg text-sm px-5 w-full h-10">
+              Guardar Consulta
+            </button>
+           
+          </div>
+        </form>
+        </div>
+    
+    </div>
+  </div>
+  
 
 
 
 
->
+
