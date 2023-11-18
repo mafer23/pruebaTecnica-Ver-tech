@@ -1,32 +1,28 @@
 package com.medici.app.controller;
+
 import com.medici.app.dto.*;
-import com.medici.app.dto.CountyNatalityFilterResidenceAndBirths;
-import com.medici.app.dto.CountyNatalityResponse;
-import com.medici.app.service.BigQueryService2;
-import com.medici.app.service.injectdependency.BigQueryService;
+import com.medici.app.service.BigQueryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("bigquery")
+@RequestMapping("data")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class BigQueryController {
 
-    private final BigQueryService2 bigQueryService;
-    private final BigQueryService bigQueryServiceInterface;
+    private final BigQueryService bigQueryService;
+    private final com.medici.app.service.injectdependency.BigQueryService bigQueryServiceInterface;
 
     @GetMapping
     public ResponseEntity<?> getConsult() throws Exception {
         bigQueryService.getConsult();
         return ResponseEntity.status(HttpStatus.OK).body("respuesta correcta");
     }
-
 
     @GetMapping("/county-natality")
     public ResponseEntity<List<CountyNatalityResponse>> getCountyNatality() throws Exception {
@@ -51,15 +47,6 @@ public class BigQueryController {
     public ResponseEntity<List<AbnormalConditionsFilters>> abnormalConditionsFilters() throws Exception {
         List<AbnormalConditionsFilters> responses = bigQueryServiceInterface.bnormalConditionsFilters();
         return ResponseEntity.status(HttpStatus.OK).body(responses);
-    }
-
-    @GetMapping("/filters")
-    public ResponseEntity<List<FiltersDto>> filters(boolean year, boolean countryOfResidence, boolean births,
-                                                    boolean aveAgeOfMother) throws Exception {
-        List<FiltersDto> responses = bigQueryServiceInterface.filters(year,countryOfResidence,births,aveAgeOfMother);
-        return ResponseEntity.status(HttpStatus.OK).body(responses);
-
-
     }
 
 
