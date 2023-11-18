@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConsultasService } from '../service/consultas.service';
 import { SearchComponent } from './search/search.component';
+import { AllComponent } from './all/all.component';
 
 
 
@@ -17,7 +18,8 @@ import { SearchComponent } from './search/search.component';
     GraficasComponent,
     ConsultasComponent,
     AdminComponent,
-    SearchComponent
+    SearchComponent,
+    AllComponent
   ],
   imports: [
     CommonModule,

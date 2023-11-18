@@ -4,6 +4,7 @@ import { ConsultasComponent } from './consultas/consultas.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import{AdminComponent} from './admin/admin.component'
 import { SearchComponent } from './search/search.component';
+import { AllComponent } from './all/all.component';
 
 
 
@@ -28,6 +29,10 @@ const routes: Routes = [
     {
       path: 'buscar',
       component: SearchComponent
+    },
+    {
+      path: 'todos',
+      component: AllComponent
     },
     {
       path: '',
