@@ -31,6 +31,8 @@ Persistencia y Funcionalidad Multijugador: Garantiza la persistencia de datos in
 
 Visuales
 
+Para probar la aplicación es admin@gmail.com para el admin y probarlo
+
 Empezando 🚀
 
 
