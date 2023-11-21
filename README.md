@@ -23,10 +23,6 @@ Persistencia y Funcionalidad Multijugador: Garantiza la persistencia de datos in
 
 
 Visuales
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
 
 Empezando 🚀
 
