@@ -33,6 +33,9 @@ Explicación del aplicativo :
 https://www.youtube.com/watch?v=4e_7zWUL2mM
 
 
+Explicación INGLES :
+https://youtu.be/m4U4vUabKkg
+
 
 ADMIN: Para probar la aplicación es admin@gmail.com para el admin y probarlo
 
