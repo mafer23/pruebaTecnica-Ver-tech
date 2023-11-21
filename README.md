@@ -45,7 +45,7 @@ Apexcharts para graficos
 
 
 Versionado 📌
-Usamos Git para el versionado. Para las versiones disponibles, ve las etiquetas en este repositorio.
+UsE Git para el versionado.
 
 Autores ✒️
 Maria Fernanda Palencia Caceres 
