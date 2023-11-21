@@ -13,7 +13,5 @@ public class SaveConsultRequest {
     private String nameUser;
     private String nameConsult;
     private String comment;
-
-
     private List<ConsultRequest> consultRequestList = new ArrayList<>();
 }
