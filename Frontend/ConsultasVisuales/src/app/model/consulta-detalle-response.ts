@@ -1,4 +1,6 @@
-export interface AbnormalConditionsResponse {
+export interface ConsultaDetalleResponse {
+
+  id:string;
   year: string;
   county_of_Residence: string;
   county_of_Residence_FIPS: string;
@@ -11,6 +13,5 @@ export interface AbnormalConditionsResponse {
   ave_Number_of_Prenatal_Wks: string;
   abnormalConditionsCheckedDesc: string;
   abnormalConditionsCheckedYN: string;
-  [key: string]: string;
-
+  [key: string]: string; // Índice de tipo de cadena para propiedades adicionales
 }

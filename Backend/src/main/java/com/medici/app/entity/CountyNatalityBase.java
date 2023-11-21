@@ -24,8 +24,12 @@ public class CountyNatalityBase {
     private String nameConsult;
     @OneToMany(mappedBy = "countyNatalityBase", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<CountyNatality> countyNatalities = new ArrayList<>();
-
+    @OneToMany(mappedBy = "countyNatalityBase", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    private List<CommentQuery> commentQueries = new ArrayList<>();
     public void addCountyNatality(CountyNatality natality){
         countyNatalities.add(natality);
+    }
+    public void addComment(CommentQuery commentQuery){
+        commentQueries.add(commentQuery);
     }
 }
