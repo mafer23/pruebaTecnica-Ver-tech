@@ -3,4 +3,5 @@ export interface AbnormalConditionsFilters {
     abnormalConditionsCheckedDesc: string;
     ave_Age_of_Mother: string;
     births: string;
+    [key: string]: string;
   }

@@ -15,16 +15,20 @@ const routes: Routes = [
    children:[
     {
       path: '',
+      component: AdminComponent
+    },
+    {
+      path: 'natalidad',
       component: ConsultasComponent
-      
+
     },
     {
       path: 'graficas',
-      component: GraficasComponent 
+      component: GraficasComponent
     },
     {
-      path: 'admin',
-      component: AdminComponent
+      path: 'buscar/:id',
+      component: SearchComponent
     },
     {
       path: 'buscar',
@@ -39,6 +43,7 @@ const routes: Routes = [
       redirectTo: '',
       pathMatch: 'full'
     },
+
 
    ]
 
