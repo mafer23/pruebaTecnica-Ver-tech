@@ -34,28 +34,6 @@ Visuales
 Empezando 🚀
 
 
-Prerrequisitos 📋
-Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:
-
-Database
-Backend Language
-Frontend Framework
-PostgreSQL
-MySQL
-Python with one of:
-
-Flask
-Django
-FastAPI
-React (Next)
-Angular
-Vue
-
-
-Java with one of:
-
-Dropwizard
-Spring Boot
 
 Instalación 🔧
 Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
