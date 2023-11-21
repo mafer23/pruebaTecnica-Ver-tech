@@ -13,8 +13,6 @@
   </div>
 
 
-
-
 <div class=" flex flex-row justify-center bg-white border border-gray-200  shadow absolute mt-44 w-1/2 h-32   rounded-lg pt-8">
   <select id="states" [(ngModel)]="selectedOption"  class="w-3/5 h-10 bg-white border border-slate-200 text-gray-900 text-sm rounded-lg   border-s-2 focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
       <option value="VAC">Choose a state</option>
@@ -24,18 +22,68 @@
       <option value="CAE">Condado de residencia, condiciones anormalesCheckedDesc y edad de la madre</option>
   </select>
   <div class="">
-
       <button type="button"(click)="onButtonClick()" class="focus:outline-none font-bold text-gray-700 bg-[#bef264] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d]  rounded-lg text-sm px-5 w-40 h-10 ">Ejecutar</button>
   </div>
+</div>
+
+<div class=" flex flex-row justify-center bg-white border border-gray-200  shadow absolute  w-1/2 h-20 mt-80  rounded-lg pt-4">
+
+  <div class=" flex flex-row ">
+   <label for="small-input" class="block text-md font-bold text-gray-700">Usuario: </label>
+
+   <input [(ngModel)]="userAdmin"  id="small-input" class=" ml-2 w-72 h-10 block  text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-xs ">
+
+  </div>
+   <div class="">
+
+       <button type="button" (click)="validarYEnviar()" class="focus:outline-none font-bold text-gray-700 bg-red-500 hover:bg-red-300 focus:ring-4 focus:bg-red-300  rounded-lg text-sm px-5 w-40 h-10 ">Apagar</button>
+   </div>
 
 
 </div>
 
 
+
 <div class="relative  mt-44 w-11/12 h-72 overflow-x-auto shadow-md sm:rounded-lg ">
   <table class="w-full  text-sm text-left rtl:text-right text-gray-700">
       <thead class="text-xs text-gray-700 uppercase bg-[#a3e635] border-b border-bg-[#bef264]">
-      <ng-container *ngIf="selectedOption === 'VAC' || selectedOption === ''">
+        <ng-container *ngIf="selectedOption === 'VAC' || selectedOption === ''">
+            <th scope="col" class="px-6 py-4 bg-[#bef264]">
+              Year
+          </th>
+          <th scope="col" class="px-6 py-4">
+              Births
+          </th>
+          <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+              County of Residence
+          </th>
+          <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
+              Age of Mother
+          </th>
+          <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+              Pre pregnancy BMI
+          </th>
+
+          <th scope="col" class="px-6  py-4  text-gray-700 whitespace-nowrap">
+            Birth Weight gms
+          </th>
+          <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap ">
+            Number of prenatal wks
+          </th>
+          <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
+            Oe gestational age wks
+          </th>
+          <th scope="col" class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+            Pre pregnancy bmi
+          </th>
+          <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
+            Birth Weight gms
+          </th>
+          <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+            County of residence fips
+          </th>
+        </ng-container>
+        <ng-container *ngIf="selectedOption === 'NDC'">
           <th scope="col" class="px-6 py-4 bg-[#bef264]">
             Year
         </th>
@@ -70,154 +118,134 @@
         <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
           County of residence fips
         </th>
-      </ng-container>
-      <ng-container *ngIf="selectedOption === 'NDC'">
-        <th scope="col" class="px-6 py-4 bg-[#bef264]">
-          Year
-      </th>
-      <th scope="col" class="px-6 py-4">
-          Births
-      </th>
-      <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-          County of Residence
-      </th>
-      <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-          Age of Mother
-      </th>
-      <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-          Pre pregnancy BMI
-      </th>
+        </ng-container>
+        <ng-container *ngIf="selectedOption === 'PRN'">
+          <th scope="col" class="px-6 py-4 text-center bg-[#bef264]">
+              Births
+          </th>
+          <th scope="col" class="text-center px-6  py-4  text-gray-700 whitespace-nowrap">
+              County of Residence
+          </th>
+        </ng-container>
+        <ng-container *ngIf="selectedOption === 'NCPCA'">
+          <th scope="col" class="px-6 py-4 bg-[#bef264]">
+                    Year
+                </th>
+                <th scope="col" class="px-6 py-4">
+                    Births
+                </th>
+                <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+                    County of Residence
+                </th>
+                <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
+                    Age of Mother
+                </th>
+                <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+                    Pre pregnancy BMI
+                </th>
+                <th scope="col" class="px-6  py-4 text-gray-700 whitespace-nowrap">
 
-      <th scope="col" class="px-6  py-4  text-gray-700 whitespace-nowrap">
-        Birth Weight gms
-      </th>
-      <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap ">
-        Number of prenatal wks
-      </th>
-      <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-        Oe gestational age wks
-      </th>
-      <th scope="col" class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-        Pre pregnancy bmi
-      </th>
-      <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-        Birth Weight gms
-      </th>
-      <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-        County of residence fips
-      </th>
-      </ng-container>
-      <ng-container *ngIf="selectedOption === 'PRN'">
-        <th scope="col" class="px-6 py-4 text-center bg-[#bef264]">
-            Births
-        </th>
-        <th scope="col" class="text-center px-6  py-4  text-gray-700 whitespace-nowrap">
-            County of Residence
-        </th>
-      </ng-container>
-      <ng-container *ngIf="selectedOption === 'NCPCA'">
-        <th scope="col" class="px-6 py-4 bg-[#bef264]">
-                  Year
-              </th>
-              <th scope="col" class="px-6 py-4">
-                  Births
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                  County of Residence
-              </th>
-              <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-                  Age of Mother
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                  Pre pregnancy BMI
-              </th>
-              <th scope="col" class="px-6  py-4 text-gray-700 whitespace-nowrap">
+                  Abnormal Conditions
+                </th>
+                <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+                  Birth Weight gms
+                </th>
+                <th scope="col" class="px-6  py-4 text-gray-700 whitespace-nowrap">
+                  Imp gestional age wks
+                </th>
+                <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap ">
+                  Number of prenatal wks
+                </th>
+                <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
+                  Oe gestational age wks
+                </th>
+                <th scope="col" class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+                  Pre pregnancy bmi
+                </th>
+                <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
+                  Birth Weight gms
+                </th>
+                <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+                  County of residence fips
+                </th>
+        </ng-container>
+        <ng-container *ngIf="selectedOption === 'CAE'">
 
-                Abnormal Conditions
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                Birth Weight gms
-              </th>
-              <th scope="col" class="px-6  py-4 text-gray-700 whitespace-nowrap">
-                Imp gestional age wks
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap ">
-                Number of prenatal wks
-              </th>
-              <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-                Oe gestational age wks
-              </th>
-              <th scope="col" class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                Pre pregnancy bmi
-              </th>
-              <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-                Birth Weight gms
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                County of residence fips
-              </th>
-      </ng-container>
-      <ng-container *ngIf="selectedOption === 'CAE'">
+                <th scope="col" class="px-6 py-4 text-center bg-[#bef264] ">
+                    Births
+                </th>
+                <th scope="col" class="px-6 text-center  py-4  text-gray-700 whitespace-nowrap">
+                    County of Residence
+                </th>
+                <th scope="col" class="px-6 text-center py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
+                    Age of Mother
+                </th>
 
-              <th scope="col" class="px-6 py-4 text-center bg-[#bef264] ">
-                  Births
-              </th>
-              <th scope="col" class="px-6 text-center  py-4  text-gray-700 whitespace-nowrap">
-                  County of Residence
-              </th>
-              <th scope="col" class="px-6 text-center py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                  Age of Mother
-              </th>
+                <th scope="col" class="px-6 text-center  py-4 text-gray-700 whitespace-nowrap">
+                  Abnormal Conditions
+                </th>
 
-              <th scope="col" class="px-6 text-center  py-4 text-gray-700 whitespace-nowrap">
-                Abnormal Conditions
-              </th>
-
-      </ng-container>
-      <!-- <th scope="col" class="px-6 py-4 bg-[#bef264]">
-                  Year
-              </th>
-              <th scope="col" class="px-6 py-4">
-                  Births
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                  County of Residence
-              </th>
-              <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-                  Age of Mother
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                  Pre pregnancy BMI
-              </th>
-              <th scope="col" class="px-6  py-4 text-gray-700 whitespace-nowrap">
-
-                Abnormal Conditions
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                Birth Weight gms
-              </th>
-              <th scope="col" class="px-6  py-4 text-gray-700 whitespace-nowrap">
-                Imp gestional age wks
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap ">
-                Number of prenatal wks
-              </th>
-              <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-                Oe gestational age wks
-              </th>
-              <th scope="col" class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                Pre pregnancy bmi
-              </th>
-              <th scope="col" class="px-6 py-4 text-gray-700 whitespace-nowrap">
-                Birth Weight gms
-              </th>
-              <th scope="col" class="px-6  py-4 bg-[#bef264] text-gray-700 whitespace-nowrap">
-                County of residence fips
-              </th> -->
+        </ng-container>
       </thead>
       <tbody>
-      <ng-container *ngIf="selectedOption === 'NDC' && countyNatalityData && countyNatalityData.length > 0;">
-          <tr *ngFor="let item of countyNatalityData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
+        <ng-container *ngIf="selectedOption === 'NDC' && countyNatalityData && countyNatalityData.length > 0;">
+            <tr *ngFor="let item of countyNatalityData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
+                <td class="px-6 py-4 font-medium bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
+                    {{ item.year }}
+                </td>
+                <td class="px-6 py-4 text-center">
+                    {{ item.births }}
+                </td>
+                <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
+                  {{ item.county_of_Residence }}
+                </td>
+                <td class="px-6 py-4 text-center">
+                  {{ item.ave_Age_of_Mother }}
+                </td>
+                <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center ">
+                  {{ item.ave_Pre_pregnancy_BMI }}
+                </td>
+                <td class="px-6 py-4  text-gray-700 whitespace-nowrap text-center">
+                  {{item.ave_Birth_Weight_gms}}
+                </td>
+                <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
+                  {{item.ave_Number_of_Prenatal_Wks}}
+                </td>
+                <td class="px-6 py-4 text-center">
+                  {{item.ave_OE_Gestational_Age_Wks}}
+                </td>
+                <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
+                  {{item.ave_Pre_pregnancy_BMI}}
+                </td>
+                <td class="px-6 py-4 text-center">
+                  {{item.ave_Birth_Weight_gms}}
+                </td>
+                <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
+                  {{item.county_of_Residence_FIPS}}
+                </td>
+
+                <!-- Agrega más columnas según las propiedades que desees mostrar -->
+                <!-- <td class="px-6 py-4 bg-[#bef264]">
+                    <a href="#" class="font-medium text-gray-700 hover:underline">Guardar</a>
+                    <a href="#" class="font-medium ml-6 text-gray-700 hover:underline">Grafica</a>
+                </td> -->
+            </tr>
+        </ng-container>
+
+        <ng-container *ngIf="selectedOption === 'PRN' && countyNatalityResidenceAndBirthsData && countyNatalityResidenceAndBirthsData.length > 0;">
+          <tr *ngFor="let item of countyNatalityResidenceAndBirthsData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
+
+              <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
+                {{ item.births }}
+              </td>
+              <td class="px-6 py-4 text-center">
+                {{ item.county_of_Residence }}
+              </td>
+          </tr>
+        </ng-container>
+
+        <ng-container *ngIf="selectedOption === 'NCPCA' && countyNatalityByAbnormalConditionsData && countyNatalityByAbnormalConditionsData.length > 0;">
+          <tr *ngFor="let item of countyNatalityByAbnormalConditionsData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
               <td class="px-6 py-4 font-medium bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
                   {{ item.year }}
               </td>
@@ -233,8 +261,14 @@
               <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center ">
                 {{ item.ave_Pre_pregnancy_BMI }}
               </td>
-              <td class="px-6 py-4  text-gray-700 whitespace-nowrap text-center">
+              <td class="px-6 py-4 text-center">
+                  {{item.abnormalConditionsCheckedDesc}}
+              </td>
+              <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
                 {{item.ave_Birth_Weight_gms}}
+              </td>
+              <td class="px-6 py-4 text-center">
+                {{item.abnormalConditionsCheckedYN}}
               </td>
               <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
                 {{item.ave_Number_of_Prenatal_Wks}}
@@ -258,108 +292,48 @@
                   <a href="#" class="font-medium ml-6 text-gray-700 hover:underline">Grafica</a>
               </td> -->
           </tr>
-      </ng-container>
+        </ng-container>
 
-      <ng-container *ngIf="selectedOption === 'PRN' && countyNatalityResidenceAndBirthsData && countyNatalityResidenceAndBirthsData.length > 0;">
-        <tr *ngFor="let item of countyNatalityResidenceAndBirthsData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
+        <ng-container *ngIf="selectedOption === 'CAE' && abnormalConditionsFiltersData && abnormalConditionsFiltersData.length > 0;">
+          <tr *ngFor="let item of abnormalConditionsFiltersData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
 
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-              {{ item.births }}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{ item.county_of_Residence }}
-            </td>
-        </tr>
-      </ng-container>
+              <td class="px-6 py-4 text-center bg-[#bef264]">
+                  {{ item.births }}
+              </td>
+              <td class="px-6 py-4 text-gray-700 whitespace-nowrap text-center">
+                {{ item.county_of_Residence }}
+              </td>
+              <td class="px-6 py-4 text-center bg-[#bef264]">
+                {{ item.ave_Age_of_Mother }}
+              </td>
 
-      <ng-container *ngIf="selectedOption === 'NCPCA' && countyNatalityByAbnormalConditionsData && countyNatalityByAbnormalConditionsData.length > 0;">
-        <tr *ngFor="let item of countyNatalityByAbnormalConditionsData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
-            <td class="px-6 py-4 font-medium bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-                {{ item.year }}
-            </td>
-            <td class="px-6 py-4 text-center">
-                {{ item.births }}
-            </td>
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-              {{ item.county_of_Residence }}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{ item.ave_Age_of_Mother }}
-            </td>
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center ">
-              {{ item.ave_Pre_pregnancy_BMI }}
-            </td>
-            <td class="px-6 py-4 text-center">
-                {{item.abnormalConditionsCheckedDesc}}
-            </td>
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-              {{item.ave_Birth_Weight_gms}}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{item.abnormalConditionsCheckedYN}}
-            </td>
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-              {{item.ave_Number_of_Prenatal_Wks}}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{item.ave_OE_Gestational_Age_Wks}}
-            </td>
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-              {{item.ave_Pre_pregnancy_BMI}}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{item.ave_Birth_Weight_gms}}
-            </td>
-            <td class="px-6 py-4 bg-[#bef264] text-gray-700 whitespace-nowrap text-center">
-              {{item.county_of_Residence_FIPS}}
-            </td>
+              <td class="px-6 py-4 text-center">
+                  {{item.abnormalConditionsCheckedDesc}}
+              </td>
 
-            <!-- Agrega más columnas según las propiedades que desees mostrar -->
-            <!-- <td class="px-6 py-4 bg-[#bef264]">
-                <a href="#" class="font-medium text-gray-700 hover:underline">Guardar</a>
-                <a href="#" class="font-medium ml-6 text-gray-700 hover:underline">Grafica</a>
-            </td> -->
-        </tr>
-      </ng-container>
-
-      <ng-container *ngIf="selectedOption === 'CAE' && abnormalConditionsFiltersData && abnormalConditionsFiltersData.length > 0;">
-        <tr *ngFor="let item of abnormalConditionsFiltersData" class="bg-[#a3e635] border-b border-bg-[#bef264]">
-
-            <td class="px-6 py-4 text-center bg-[#bef264]">
-                {{ item.births }}
-            </td>
-            <td class="px-6 py-4 text-gray-700 whitespace-nowrap text-center">
-              {{ item.county_of_Residence }}
-            </td>
-            <td class="px-6 py-4 text-center bg-[#bef264]">
-              {{ item.ave_Age_of_Mother }}
-            </td>
-
-            <td class="px-6 py-4 text-center">
-                {{item.abnormalConditionsCheckedDesc}}
-            </td>
-
-            <!-- Agrega más columnas según las propiedades que desees mostrar -->
-            <!-- <td class="px-6 py-4 bg-[#bef264]">
-                <a href="#" class="font-medium text-gray-700 hover:underline">Guardar</a>
-                <a href="#" class="font-medium ml-6 text-gray-700 hover:underline">Grafica</a>
-            </td> -->
-        </tr>
-      </ng-container>
+              <!-- Agrega más columnas según las propiedades que desees mostrar -->
+              <!-- <td class="px-6 py-4 bg-[#bef264]">
+                  <a href="#" class="font-medium text-gray-700 hover:underline">Guardar</a>
+                  <a href="#" class="font-medium ml-6 text-gray-700 hover:underline">Grafica</a>
+              </td> -->
+          </tr>
+        </ng-container>
 
 
-      <ng-container *ngIf="!selectedOption || noDataCondition()" >
-        <tr class=" " >
-            <td colspan="13" class=" pb-2 text-center">No hay datos disponibles</td>
-        </tr>
-      </ng-container>
+        <ng-container *ngIf="!selectedOption || noDataCondition()" >
+          <tr class=" " >
+              <td colspan="13" class=" pb-2 text-center">No hay datos disponibles</td>
+          </tr>
+        </ng-container>
+
       </tbody>
+
   </table>
-</div>
-
 
 </div>
 
+
+</div>
 
 
 
@@ -378,15 +352,31 @@
           <button type="submit" class="focus:outline-none font-bold text-gray-700 bg-[#bef264] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d] rounded-lg text-sm px-5 w-full h-10">
             Guardar Consulta
           </button>
-          <button type="submit" class="focus:outline-none font-bold text-gray-700 bg-[#bef264] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d] rounded-lg text-sm px-5 w-full h-10">
-            Buscar
-          </button>
-          <button type="submit" class="focus:outline-none font-bold text-gray-700 bg-[#bef264] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d] rounded-lg text-sm px-5 w-full h-10">
-           Graficar
-          </button>
         </div>
       </form>
+
       </div>
-  
+
+
   </div>
 </div>
+
+<div class="mb-10">
+  <app-graficas *ngIf="showChart"></app-graficas>
+
+</div>
+
+<div class="w-full flex justify-around mb-36">
+  <div class="flex items-center justify-center h-auto">
+    <button (click)="onButtonGraficoClick()"  class="focus:outline-none font-bold text-gray-700 bg-[#bef264] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d] rounded-lg text-sm px-5 w-full h-10">
+        Graficar
+    </button>
+  </div>
+  <div>
+    <button [routerLink]="['/todos']" routerLinkActive="router-link-active"  class="focus:outline-none font-bold text-gray-700 bg-[#bef264] hover:bg-[#d9f99d] focus:ring-4 focus:bg-[#d9f99d] rounded-lg text-sm px-5 w-full h-10">
+      Ver consultas
+  </button>
+  </div>
+</div>
+
+

@@ -9,4 +9,5 @@ export interface CountyNatalityResponse {
     ave_Birth_Weight_gms: string;
     ave_Pre_pregnancy_BMI: string;
     ave_Number_of_Prenatal_Wks: string;
+    [key: string]: string;
 }
