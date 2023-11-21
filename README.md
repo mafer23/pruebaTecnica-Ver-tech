@@ -1,5 +1,4 @@
 # pruebaTecnica-Ver-tech
-# pruebaTecnica-Ver-tech
 
 
 
