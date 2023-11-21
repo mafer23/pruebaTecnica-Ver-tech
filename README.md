@@ -13,12 +13,19 @@ Esta aplicación se centra en proporcionar a los usuarios una manera intuitiva d
 
 Características Principales:
 
+
 Construcción Intuitiva: Permite a los usuarios construir consultas utilizando elementos gráficos específicos para el conjunto de datos.
+
 Filtrado Avanzado: Ofrece la posibilidad de filtrar datos mediante controles como casillas de verificación, menús desplegables y controles deslizantes.
+
 Ejecución Controlada: La ejecución de la consulta se realiza únicamente al presionar el botón "Ejecutar Consulta".
+
 Visualización Creativa: Después de ejecutar una consulta, la aplicación presenta representaciones visuales atractivas de los datos, como gráficos de líneas, barras, círculos, u otras opciones creativas.
+
 Persistencia de Consultas: Permite a los usuarios guardar consultas con nombres y comentarios, asociando automáticamente el nombre de usuario al guardar.
+
 Gestión de Consultas: Permite ver, comentar y seleccionar consultas guardadas, fomentando la colaboración y exploración de datos entre usuarios.
+
 Persistencia y Funcionalidad Multijugador: Garantiza la persistencia de datos incluso después de reinicios, y admite el uso simultáneo por parte de varios usuarios con nombres de usuario distintos.
 
 
