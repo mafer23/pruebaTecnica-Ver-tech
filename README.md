@@ -34,28 +34,6 @@ Visuales
 Empezando 🚀
 
 
-
-Instalación 🔧
-Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
-
-# paso 1
-Y así sucesivamente…
-
-# paso 2
-Ejecutando las Pruebas ⚙️
-Instrucciones y ejemplos para ejecutar el conjunto de pruebas.
-
-# proporciona un ejemplo
-Pruebas de Principio a Fin 🔩
-Explica qué cubren estas pruebas, por qué son importantes y cómo interpretar sus resultados.
-
-Pruebas de Estilo de Código ⌨️
-Descripción y ejemplos de las pruebas de estilo que estás utilizando.
-
-# proporciona un ejemplo
-Despliegue 📦
-Instrucciones sobre cómo desplegar esto en un sistema en vivo o ambiente de producción.
-
 Construido Con 🛠️:
 Java con SpringBoot - El lenguaje utilizado
 Angular  - El framework web utilizado
