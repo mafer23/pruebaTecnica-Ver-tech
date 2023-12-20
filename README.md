@@ -29,9 +29,14 @@ Gestión de Consultas: Permite ver, comentar y seleccionar consultas guardadas, 
 Persistencia y Funcionalidad Multijugador: Garantiza la persistencia de datos incluso después de reinicios, y admite el uso simultáneo por parte de varios usuarios con nombres de usuario distintos.
 
 
-Visuales
+Explicación del aplicativo :
+https://www.youtube.com/watch?v=4e_7zWUL2mM
 
-Para probar la aplicación es admin@gmail.com para el admin y probarlo
+
+Explicación INGLES :
+https://youtu.be/m4U4vUabKkg
+
+ADMIN: Para probar la aplicación es admin@gmail.com para el admin y probarlo
 
 Empezando 🚀
 
@@ -44,6 +49,13 @@ MySql - Sistema de base de datos
 Apexcharts para graficos
 
 
+
+
+Versionado 📌
+Use Git para el versionado.
+
+Autores ✒️
+Maria Fernanda Palencia Caceres 
 
 
 Versionado 📌
